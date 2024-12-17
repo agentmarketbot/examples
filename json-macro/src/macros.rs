@@ -16,8 +16,7 @@ macro_rules! json {
             let mut fields = $crate::macros::Box::new(
                 $crate::macros::HashMap::new());
             $(
-                fields.insert($crate::macros::ToString::to_string($key),
-                              json!($value));
+                fields.insert($crate::macros::ToString::to_string($key), json!($value));
             )*
             $crate::Json::Object(fields)
         }
